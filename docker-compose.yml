@@ -1,0 +1,55 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      # MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: solucius
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+
+  spring-app:
+    build:
+      context: ./Back-End/solucius
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+      - redis-refresh-token
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/solucius?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    networks:
+      - my-network
+
+  react-app:
+    build:
+      context: ./react-app
+      dockerfile: Dockerfile
+    volumes:
+      - ./react-app/src:/app/src:delegated
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: http://spring-app:8080
+
+  redis-refresh-token:
+    container_name: redis-token
+    image: redis:alpine
+    command: redis-server /usr/local/etc/redis-refresh-token/redis.conf --requirepass 1234
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/refresh-token-data:/data
+      - ./data/refresh-token-data/redis.conf:/usr/local/etc/redis-refresh-token/redis.conf
+    networks:
+      - my-network
+
+networks:
+  my-network:

@@ -1,0 +1,131 @@
+/*body {*/
+/*    background: linear-gradient(#9049c6, #411a77);*/
+/*    background-size: cover;*/
+/*    height: 100vh;*/
+/*}*/
+.title {
+    color: white;
+    font-size: 40px;
+}
+.login-form-container {
+    display: grid;
+    place-items: center;
+    height: 90vh; /* 화면 높이의 100%로 설정하여 화면 중앙에 배치 */
+}
+.login-form-container2{
+    place-items: center;
+    display: grid;
+}
+#components-form-demo-normal-login .login-form {
+    max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+    float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+    float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+    width: 100%;
+}
+.login-form {
+
+    width: 500px;
+    height: 600px;
+    /*border-radius: 50px;*/
+    padding: 5px;
+    /*box-shadow: 10px 10px 30px #371454;*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(204, 204, 204, 0.45);
+
+}
+
+.login-form h2 {
+    margin: 40px;
+    font-size: 43px;
+}
+
+.p-inputgroup {
+    margin-bottom: 10px;
+    width: 350px;
+}
+
+.p-inputgroup-addon {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+
+.p-inputtext {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0;
+}
+.login-btn {
+    position: relative;
+    width: 80%;
+    height: 50px;
+    margin-top: 15px;
+    border: 0px solid #fff;
+}
+.login-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+}
+.login-bottom-container {
+    width: 100%;
+    margin-top: 25px;
+    padding:10px;
+}
+.login-why {
+    margin-left: 30px;
+    width: 250px;
+}
+.login-go {
+    cursor: pointer;
+    color: #0f49a8;
+    font-weight: bold;
+    text-decoration: underline;
+ }
+
+/* 아이디,비밀번호 찾기 css */
+.btn_id{
+    width: 150px;
+    height: 50px;
+    border-top: 1px solid #DCDCDC;
+    border-left: 1px solid #DCDCDC;
+    border-right: 1px solid #DCDCDC;
+
+}
+.btn_id button {
+    color: #9049c6;
+    width: 150px;
+    height: 50px;
+    font-size: large;
+    border: 0px;
+    background-color: white;
+
+}
+.btn_pw{
+    width: 150px;
+    height: 50px;
+    border: 1px solid #DCDCDC;
+
+
+}
+.btn_pw button {
+    width: 150px;
+    height: 50px;
+    font-size: large;
+    background-color: #f7f7f7;
+    color: #919191;
+    border: 0px;
+
+
+}

@@ -1,0 +1,25 @@
+.Join-form {
+
+    background-color: #FFFFFF;
+    width: 500px;
+    height: 550px;
+    border-radius: 50px;
+    padding: 5px;
+    /*box-shadow: 10px 10px 30px #371454;*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+
+}
+.Join-btn {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    background-color: #7d3fb3;
+}
+.flex-auto {
+    margin-top: 10px;
+}
